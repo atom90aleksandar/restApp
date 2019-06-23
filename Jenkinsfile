@@ -16,7 +16,7 @@ pipeline {
                 bat "mvn package"
             }
         }
-        stage('Clone helloworld git repository'){
+        stage('Clone helloworld git repository and compile HelloWorld.java'){
              steps{
                 checkout([$class: 'GitSCM', branches: [[name: 'developer_branch']], 
                           doGenerateSubmoduleConfigurations: false, extensions: 
