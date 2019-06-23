@@ -1,21 +1,19 @@
 pipeline {
     agent any 
     stages {
-        stage('Clone repo and clean it') { 
+        stage('---clean---') { 
             steps {
-                bat "rm -rf restApp"
-                bat "git clone https://github.com/atom90aleksandar/restApp.git"
-                bat "mvn clean -f restApp"
+                bat "mvn clean"
             }
         }
-        stage('Test') { 
+        stage('---test---') { 
             steps {
-                bat "mvn test -f restApp" 
+                bat "mvn test" 
             }
         }
-        stage('Deploy') { 
+        stage('---package---') { 
             steps {
-                bat "mvn package -f restApp"
+                bat "mvn package"
             }
         }
     }
