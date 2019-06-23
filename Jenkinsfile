@@ -16,7 +16,7 @@ pipeline {
                 bat "mvn package"
             }
         }
-        stage('Combination'){
+        stage('Clone helloworld git repository'){
              steps{
                 checkout([$class: 'GitSCM', branches: [[name: 'developer_branch']], 
                           doGenerateSubmoduleConfigurations: false, extensions: 
